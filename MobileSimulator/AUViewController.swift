@@ -8,12 +8,17 @@
 
 import UIKit
 
-class AUViewController: UIViewController {
-
+class AUViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    var texts = ["hello", "world", "hello", "Swift"];
+    @IBOutlet weak var tableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        tableView.dataSource = self;
+        tableView.delegate = self;
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,15 +26,20 @@ class AUViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    //MARK:TableView DataSource
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return texts.count;
     }
-    */
-
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "Cell");
+        cell.textLabel.text = texts[indexPath.row];
+        return cell;
+    }
+    
+    //MARK:TableView Delegate
+    func tableView(tableView: UITableView?, didSelectRowAtIndexPath indexPath:NSIndexPath!) {
+        var text: String = texts[indexPath.row];
+        println(text);
+    }
 }

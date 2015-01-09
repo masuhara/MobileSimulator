@@ -23,7 +23,7 @@
         <scene sceneID="vsD-Ks-dsl">
             <objects>
                 <tabBarController id="bye-kN-cUj" customClass="RootTabBarController" customModule="MobileSimulator" customModuleProvider="target" sceneMemberID="viewController">
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" translucent="NO" id="oFA-aC-JGU">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -60,7 +60,7 @@
         <!--au-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="AUViewController" customModule="MobileSimulator" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -69,7 +69,7 @@
                         <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="50" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Btg-cy-Kvc">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="50" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Btg-cy-Kvc">
                                 <rect key="frame" x="0.0" y="60" width="600" height="427"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -98,6 +98,10 @@
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="維持費" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uwe-zb-jj0">
                                 <rect key="frame" x="70" y="20" width="80" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="bZN-EE-SIe"/>
+                                    <constraint firstAttribute="height" constant="21" id="ga1-LS-Box"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="ComicReggaeStd-B" family="FOT-ComicReggae Std" pointSize="25"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -110,6 +114,9 @@
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zxb-pK-bLb">
                                 <rect key="frame" x="287" y="20" width="150" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="ZcS-xc-u9a"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="ComicReggaeStd-B" family="FOT-ComicReggae Std" pointSize="25"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -117,11 +124,17 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="Btg-cy-Kvc" firstAttribute="bottom" secondItem="2fi-mo-0CV" secondAttribute="top" id="BsM-TW-TH6"/>
                             <constraint firstItem="Zxb-pK-bLb" firstAttribute="leading" secondItem="Uwe-zb-jj0" secondAttribute="trailing" constant="137" id="Dcz-Nu-RH2"/>
                             <constraint firstAttribute="trailingMargin" secondItem="5Rg-K4-qHf" secondAttribute="trailing" constant="10" id="GLE-lh-IWe"/>
+                            <constraint firstItem="Btg-cy-Kvc" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="IkU-Z8-Uek"/>
                             <constraint firstItem="5Rg-K4-qHf" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="20" id="IqR-RJ-VF0"/>
+                            <constraint firstItem="Btg-cy-Kvc" firstAttribute="top" secondItem="Uwe-zb-jj0" secondAttribute="bottom" constant="19" id="OH6-Qq-Rgi"/>
+                            <constraint firstAttribute="trailing" secondItem="Btg-cy-Kvc" secondAttribute="trailing" id="Tr9-jj-61Z"/>
                             <constraint firstItem="Uwe-zb-jj0" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="20" id="U2V-M2-aUc"/>
                             <constraint firstItem="Zxb-pK-bLb" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="20" id="UqH-lM-Iws"/>
+                            <constraint firstItem="Zxb-pK-bLb" firstAttribute="baseline" secondItem="5Rg-K4-qHf" secondAttribute="baseline" id="Zep-Od-tTn"/>
+                            <constraint firstItem="Uwe-zb-jj0" firstAttribute="baseline" secondItem="Zxb-pK-bLb" secondAttribute="baseline" id="kQ9-pT-GFg"/>
                             <constraint firstItem="5Rg-K4-qHf" firstAttribute="leading" secondItem="Zxb-pK-bLb" secondAttribute="trailing" constant="10" id="pVj-oq-apD"/>
                             <constraint firstItem="Uwe-zb-jj0" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="54" id="qVz-YR-8pL"/>
                             <constraint firstItem="Uwe-zb-jj0" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="20" id="qWi-CK-UTI"/>
@@ -141,6 +154,9 @@
                         <barButtonItem key="leftBarButtonItem" systemItem="search" id="g2U-bG-t0C"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="action" id="jgw-1X-Fn8"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="Btg-cy-Kvc" id="Xrd-ce-BcV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
@@ -263,8 +279,8 @@
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="Tg8-Y8-ir9"/>
                                 <exclude reference="MGe-cG-P24"/>
+                                <exclude reference="Tg8-Y8-ir9"/>
                                 <exclude reference="kdd-Ra-aOn"/>
                             </mask>
                         </variation>
