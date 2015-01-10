@@ -11,6 +11,7 @@ import UIKit
 class AUViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     var texts = ["hello", "world", "hello", "Swift"];
+    
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
