@@ -12,6 +12,7 @@ class AUViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
     
     var texts = ["LTEプラン=980円", "通話ワイド24", "au通話定額", "LTEネット=300円", "電話きほんパック", "ビデオパス", "スマートパス", "うたパス", "ブックパス", "アニメパス", "ディズニーパス", "LTEフラット=5,700円"];
     
+    
     //参考:http://mobilego22.tanken-go.com/2013/12/13/2427
     
     @IBOutlet weak var tableView: UITableView!
