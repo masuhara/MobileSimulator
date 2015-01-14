@@ -28,7 +28,6 @@ class RootTabBarController: UITabBarController {
         NSLog("%@", font)
         au_tabBarItem.setTitleTextAttributes(selectedAttributes, forState: UIControlState.Selected);
         
-        
     }
 
     override func didReceiveMemoryWarning() {
