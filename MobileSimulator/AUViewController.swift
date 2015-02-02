@@ -14,7 +14,6 @@ class AUViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
     //参考:http://mobilego22.tanken-go.com/2013/12/13/2427
     
     
-    
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
