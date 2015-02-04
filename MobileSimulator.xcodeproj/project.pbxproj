@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		AFCE20FE1A5F3A2200632744 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCE20FD1A5F3A2200632744 /* AppDelegate.swift */; };
-		AFCE21001A5F3A2200632744 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCE20FF1A5F3A2200632744 /* ViewController.swift */; };
 		AFCE21031A5F3A2200632744 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFCE21011A5F3A2200632744 /* Main.storyboard */; };
 		AFCE21051A5F3A2200632744 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AFCE21041A5F3A2200632744 /* Images.xcassets */; };
 		AFCE21081A5F3A2200632744 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = AFCE21061A5F3A2200632744 /* LaunchScreen.xib */; };
@@ -67,7 +66,6 @@
 		AFCE20F81A5F3A2200632744 /* MobileSimulator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobileSimulator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFCE20FC1A5F3A2200632744 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AFCE20FD1A5F3A2200632744 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		AFCE20FF1A5F3A2200632744 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		AFCE21021A5F3A2200632744 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AFCE21041A5F3A2200632744 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		AFCE21071A5F3A2200632744 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -132,6 +130,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AFBCFD871A821470002AE921 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				AFCE21431A5F5FB400632744 /* RootTabBarController.swift */,
+				AFCE21261A5F4C1300632744 /* AUViewController.swift */,
+				AFCE21281A5F4C2600632744 /* DocomoViewController.swift */,
+				AFCE21241A5F4C0000632744 /* SoftbankViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		AFBCFD881A821499002AE921 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				AFCE212C1A5F554300632744 /* Option.swift */,
+				AFCE212E1A5F555100632744 /* Contents.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		AFBCFD891A8214C9002AE921 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		AFCE20EF1A5F3A2200632744 = {
 			isa = PBXGroup;
 			children = (
@@ -154,13 +179,9 @@
 			isa = PBXGroup;
 			children = (
 				AFCE20FD1A5F3A2200632744 /* AppDelegate.swift */,
-				AFCE21431A5F5FB400632744 /* RootTabBarController.swift */,
-				AFCE21261A5F4C1300632744 /* AUViewController.swift */,
-				AFCE21281A5F4C2600632744 /* DocomoViewController.swift */,
-				AFCE21241A5F4C0000632744 /* SoftbankViewController.swift */,
-				AFCE212C1A5F554300632744 /* Option.swift */,
-				AFCE212E1A5F555100632744 /* Contents.swift */,
-				AFCE20FF1A5F3A2200632744 /* ViewController.swift */,
+				AFBCFD881A821499002AE921 /* Models */,
+				AFBCFD891A8214C9002AE921 /* Views */,
+				AFBCFD871A821470002AE921 /* Controllers */,
 				AFCE21011A5F3A2200632744 /* Main.storyboard */,
 				AFCE21041A5F3A2200632744 /* Images.xcassets */,
 				AFCE21061A5F3A2200632744 /* LaunchScreen.xib */,
@@ -394,7 +415,6 @@
 				AFCE21441A5F5FB400632744 /* RootTabBarController.swift in Sources */,
 				AFCE21251A5F4C0000632744 /* SoftbankViewController.swift in Sources */,
 				AFCE212F1A5F555100632744 /* Contents.swift in Sources */,
-				AFCE21001A5F3A2200632744 /* ViewController.swift in Sources */,
 				AFCE21271A5F4C1300632744 /* AUViewController.swift in Sources */,
 				AFCE212D1A5F554300632744 /* Option.swift in Sources */,
 				AFCE20FE1A5F3A2200632744 /* AppDelegate.swift in Sources */,
