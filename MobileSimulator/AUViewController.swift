@@ -44,4 +44,6 @@ class AUViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
         var text: String = texts[indexPath.row];
         println(text);
     }
+    
+    
 }
