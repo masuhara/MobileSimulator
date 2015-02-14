@@ -23,6 +23,7 @@ class AUViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
         tableView.delegate = self
     }
     
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -33,8 +34,10 @@ class AUViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
         return texts.count;
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(tableView: UITableView?, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "Cell");
+        
+        //add optional
         cell.textLabel?.text = texts[indexPath.row];
         return cell;
     }
