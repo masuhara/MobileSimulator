@@ -29,6 +29,7 @@ class AUViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
         // Dispose of any resources that can be recreated.
     }
     
+    
     //MARK:TableView DataSource
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return texts.count;
