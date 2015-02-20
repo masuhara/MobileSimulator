@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AFC502391A957D00002A4BD1 /* AUPlans.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC502381A957D00002A4BD1 /* AUPlans.swift */; };
+		AFC5023B1A957D25002A4BD1 /* SBPlans.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC5023A1A957D25002A4BD1 /* SBPlans.swift */; };
+		AFC5023D1A957D46002A4BD1 /* DCMPlans.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC5023C1A957D46002A4BD1 /* DCMPlans.swift */; };
 		AFCE20FE1A5F3A2200632744 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCE20FD1A5F3A2200632744 /* AppDelegate.swift */; };
 		AFCE21031A5F3A2200632744 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFCE21011A5F3A2200632744 /* Main.storyboard */; };
 		AFCE21051A5F3A2200632744 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AFCE21041A5F3A2200632744 /* Images.xcassets */; };
@@ -19,8 +22,6 @@
 		AFCE21271A5F4C1300632744 /* AUViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCE21261A5F4C1300632744 /* AUViewController.swift */; };
 		AFCE21291A5F4C2600632744 /* DocomoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCE21281A5F4C2600632744 /* DocomoViewController.swift */; };
 		AFCE212B1A5F541800632744 /* FOT-ComicReggaeStd-B.otf in Resources */ = {isa = PBXBuildFile; fileRef = AFCE212A1A5F541800632744 /* FOT-ComicReggaeStd-B.otf */; };
-		AFCE212D1A5F554300632744 /* Option.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCE212C1A5F554300632744 /* Option.swift */; };
-		AFCE212F1A5F555100632744 /* Contents.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCE212E1A5F555100632744 /* Contents.swift */; };
 		AFCE21441A5F5FB400632744 /* RootTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCE21431A5F5FB400632744 /* RootTabBarController.swift */; };
 		AFCE21641A5F72B700632744 /* Icon-40.png in Resources */ = {isa = PBXBuildFile; fileRef = AFCE21471A5F72B700632744 /* Icon-40.png */; };
 		AFCE21651A5F72B700632744 /* Icon-40@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AFCE21481A5F72B700632744 /* Icon-40@2x.png */; };
@@ -63,6 +64,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AFC502381A957D00002A4BD1 /* AUPlans.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AUPlans.swift; path = Models/AUPlans.swift; sourceTree = "<group>"; };
+		AFC5023A1A957D25002A4BD1 /* SBPlans.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SBPlans.swift; path = Models/SBPlans.swift; sourceTree = "<group>"; };
+		AFC5023C1A957D46002A4BD1 /* DCMPlans.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DCMPlans.swift; path = Models/DCMPlans.swift; sourceTree = "<group>"; };
 		AFCE20F81A5F3A2200632744 /* MobileSimulator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobileSimulator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFCE20FC1A5F3A2200632744 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AFCE20FD1A5F3A2200632744 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -79,8 +83,6 @@
 		AFCE21261A5F4C1300632744 /* AUViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AUViewController.swift; sourceTree = "<group>"; };
 		AFCE21281A5F4C2600632744 /* DocomoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocomoViewController.swift; sourceTree = "<group>"; };
 		AFCE212A1A5F541800632744 /* FOT-ComicReggaeStd-B.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FOT-ComicReggaeStd-B.otf"; sourceTree = "<group>"; };
-		AFCE212C1A5F554300632744 /* Option.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Option.swift; sourceTree = "<group>"; };
-		AFCE212E1A5F555100632744 /* Contents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contents.swift; sourceTree = "<group>"; };
 		AFCE21431A5F5FB400632744 /* RootTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootTabBarController.swift; sourceTree = "<group>"; };
 		AFCE21471A5F72B700632744 /* Icon-40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-40.png"; sourceTree = "<group>"; };
 		AFCE21481A5F72B700632744 /* Icon-40@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-40@2x.png"; sourceTree = "<group>"; };
@@ -144,8 +146,9 @@
 		AFBCFD881A821499002AE921 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				AFCE212C1A5F554300632744 /* Option.swift */,
-				AFCE212E1A5F555100632744 /* Contents.swift */,
+				AFC502381A957D00002A4BD1 /* AUPlans.swift */,
+				AFC5023C1A957D46002A4BD1 /* DCMPlans.swift */,
+				AFC5023A1A957D25002A4BD1 /* SBPlans.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -411,12 +414,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AFC5023B1A957D25002A4BD1 /* SBPlans.swift in Sources */,
 				AFCE21291A5F4C2600632744 /* DocomoViewController.swift in Sources */,
 				AFCE21441A5F5FB400632744 /* RootTabBarController.swift in Sources */,
+				AFC5023D1A957D46002A4BD1 /* DCMPlans.swift in Sources */,
 				AFCE21251A5F4C0000632744 /* SoftbankViewController.swift in Sources */,
-				AFCE212F1A5F555100632744 /* Contents.swift in Sources */,
+				AFC502391A957D00002A4BD1 /* AUPlans.swift in Sources */,
 				AFCE21271A5F4C1300632744 /* AUViewController.swift in Sources */,
-				AFCE212D1A5F554300632744 /* Option.swift in Sources */,
 				AFCE20FE1A5F3A2200632744 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

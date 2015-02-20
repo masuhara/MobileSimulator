@@ -13,6 +13,15 @@ class RootTabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.setTabBarIcons()
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    private func setTabBarIcons() {
         // tabbar icons
         var au_tabBarItem = self.tabBar.items![0] as UITabBarItem;
         au_tabBarItem.image = UIImage(named: "anzuchang_au.png")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal);
@@ -24,14 +33,7 @@ class RootTabBarController: UITabBarController {
         // font
         let font:UIFont! = UIFont(name:"ComicReggaeStd-B",size:10);
         let selectedAttributes:NSDictionary! = [NSFontAttributeName : font, NSForegroundColorAttributeName : UIColor.redColor()];
-        
-        NSLog("%@", font)
         au_tabBarItem.setTitleTextAttributes(selectedAttributes, forState: UIControlState.Selected);
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
 }
