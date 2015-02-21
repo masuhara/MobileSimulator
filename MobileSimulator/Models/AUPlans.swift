@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class AUPlans: NSObject {
     class var sharedInstance : AUPlans {
         struct Static {
