@@ -17,7 +17,6 @@ class AUPlans: NSObject {
         return Static.instance
     }
     
-    
     let contents = Dictionary<String, Int>()
     //var contents : [String] = []
     private override init() {
