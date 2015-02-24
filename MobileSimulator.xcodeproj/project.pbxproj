@@ -110,7 +110,7 @@
 		AFCE21571A5F72B700632744 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		AFCE21581A5F72B700632744 /* iTunesArtwork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iTunesArtwork.png; sourceTree = "<group>"; };
 		AFCE21591A5F72B700632744 /* iTunesArtwork@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iTunesArtwork@2x.png"; sourceTree = "<group>"; };
-		AFE7A7511A9CDED50039FEE4 /* MobileSimulator-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MobileSimulator-Bridging-Header.h"; sourceTree = "<group>"; };
+		AFE7A7511A9CDED50039FEE4 /* MobileSimulator-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "MobileSimulator-Bridging-Header.h"; path = "Defaults/MobileSimulator-Bridging-Header.h"; sourceTree = "<group>"; };
 		AFE7A75B1A9CFD6A0039FEE4 /* tabbar_bg_black.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tabbar_bg_black.png; sourceTree = "<group>"; };
 		AFE7A75C1A9CFD6A0039FEE4 /* tabbar_bg_black@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar_bg_black@2x.png"; sourceTree = "<group>"; };
 		AFE7A75F1A9D00460039FEE4 /* au_deselected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "au_deselected@2x.png"; sourceTree = "<group>"; };
@@ -221,6 +221,7 @@
 		AFCE20FB1A5F3A2200632744 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				AFE7A7511A9CDED50039FEE4 /* MobileSimulator-Bridging-Header.h */,
 				AFCE21451A5F72B700632744 /* Images */,
 				AFCE212A1A5F541800632744 /* FOT-ComicReggaeStd-B.otf */,
 				AFCE20FC1A5F3A2200632744 /* Info.plist */,
@@ -251,7 +252,6 @@
 				AFCE211E1A5F3CFE00632744 /* Default-568h@2x.png */,
 				AFCE211F1A5F3CFE00632744 /* Default-667h@2x.png */,
 				AFCE21201A5F3CFE00632744 /* Default-736h@3x.png */,
-				AFE7A7511A9CDED50039FEE4 /* MobileSimulator-Bridging-Header.h */,
 			);
 			name = Defaults;
 			path = ../Defaults;

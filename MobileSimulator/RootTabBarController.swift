@@ -10,6 +10,8 @@ import UIKit
 
 class RootTabBarController: UITabBarController {
 
+    var interstitial:GADInterstitial = GADInterstitial()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -21,6 +23,19 @@ class RootTabBarController: UITabBarController {
         
         //UITabBar.appearance().tintColor = UIColor.whiteColor()
         //let realm = RLMRealm.defaultRealm()
+        
+        //MARK:AdMob Interstitial
+        interstitial.adUnitID = "ca-app-pub-6363351251362748/7717543510"
+        interstitial.loadRequest(GADRequest())
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        
+        if interstitial.isReady {
+            interstitial.presentFromRootViewController(self)
+        } else {
+            NSLog("is Not Ready")
+        }
     }
     
     override func didReceiveMemoryWarning() {

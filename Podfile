@@ -4,6 +4,7 @@
 target 'MobileSimulator' do
 
 pod "Realm"
+pod 'Google-Mobile-Ads-SDK', '~> 7.0'
 
 end
 
