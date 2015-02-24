@@ -10,9 +10,7 @@ import UIKit
 
 class AUViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    
-    
-    
+    let contentArray : Dictionary<String, Int> = AUPlans.sharedInstance.contents
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
@@ -30,14 +28,14 @@ class AUViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
     
     //MARK:TableView DataSource
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return texts.count;
+        return contentsArray.count;
     }
     
     func tableView(tableView: UITableView?, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "Cell");
         
         //add optional
-        cell.textLabel?.text = texts[indexPath.row];
+        cell.textLabel?.text = contentArray[indexPath.row];
         return cell;
     }
     

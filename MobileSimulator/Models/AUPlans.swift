@@ -10,6 +10,7 @@ import UIKit
 
 
 class AUPlans: NSObject {
+    
     class var sharedInstance : AUPlans {
         struct Static {
             static let instance : AUPlans = AUPlans()
@@ -17,11 +18,10 @@ class AUPlans: NSObject {
         return Static.instance
     }
     
-    
     let contents = Dictionary<String, Int>()
-    //var contents : [String] = []
+    
     private override init() {
-        contents = ["auスマートパス":401,
+        self.contents = ["auスマートパス":401,
             "Apple Care":432,
             "auスマートサポート":3240,
             "テザリングオプション":540,
