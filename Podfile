@@ -3,9 +3,11 @@
 
 target 'MobileSimulator' do
 
+pod "Realm"
+
 end
 
-target 'MobileSimulatorTests' do
-
+target 'MobileSimulatorTests', exclusive: true do
+    pod 'Realm/Headers'
 end
 
