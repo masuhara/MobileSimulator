@@ -17,7 +17,7 @@ class DCMPlans: NSObject {
     }
     
     let contents = Dictionary<String, Int>()
-    //var contents : [String] = []
+
     private override init() {
         contents = ["auスマートパス":401,
                     "Apple Care":432,

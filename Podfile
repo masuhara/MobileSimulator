@@ -3,9 +3,12 @@
 
 target 'MobileSimulator' do
 
+pod "Realm"
+pod 'Google-Mobile-Ads-SDK', '~> 7.0'
+
 end
 
-target 'MobileSimulatorTests' do
-
+target 'MobileSimulatorTests', exclusive: true do
+    pod 'Realm/Headers'
 end
 

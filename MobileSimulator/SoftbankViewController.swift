@@ -8,27 +8,66 @@
 
 import UIKit
 
-class SoftbankViewController: UIViewController {
-
+class SoftbankViewController: UIViewController ,UITableViewDelegate, UITableViewDataSource {
+    
+    var plans: [String] = []
+    var values: [Int] = []
+    
+    @IBOutlet weak var tableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        tableView.dataSource = self
+        tableView.delegate = self
+        
+        setPlans()
+        setNavigationBarAttribute()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    
+    //MARK:TableView DataSource
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return SBPlans.sharedInstance.contents.count;
     }
-    */
-
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Value1, reuseIdentifier: "Cell");
+        
+        //Cell Appearance
+        cell.textLabel?.text = plans[indexPath.row]
+        cell.textLabel?.font = UIFont(name: "FOT-ComicReggae Std", size: 16)
+        cell.detailTextLabel?.text = String(format: "%d 円/月", values[indexPath.row])
+        cell.detailTextLabel?.font = UIFont(name: "FOT-ComicReggae Std", size: 11)
+        return cell;
+    }
+    
+    //MARK:TableView Delegate
+    func tableView(tableView: UITableView?, didSelectRowAtIndexPath indexPath:NSIndexPath!) {
+        var text: String = plans[indexPath.row];
+        println(text);
+    }
+    
+    //MARK:Private
+    private func setNavigationBarAttribute() {
+        //self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "tabbar_bg_black"), forBarMetrics: .Default)
+        navigationController?.navigationBar.barTintColor = UIColor.hexStr("c0c0c0", alpha: 1.0)
+        let titleDictionary: NSDictionary = [NSForegroundColorAttributeName: UIColor.whiteColor()]
+        navigationController?.navigationBar.titleTextAttributes = titleDictionary
+    }
+    
+    private func setPlans() {
+        for key in AUPlans.sharedInstance.contents.keys{
+            plans.append(key)
+            for value in AUPlans.sharedInstance.contents.values{
+                values.append(value)
+            }
+        }
+    }
 }
+
