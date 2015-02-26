@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AF081E801A9FBF7900DF2510 /* DPAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF081E7F1A9FBF7900DF2510 /* DPAlertViewController.swift */; };
 		AFCE20FE1A5F3A2200632744 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCE20FD1A5F3A2200632744 /* AppDelegate.swift */; };
 		AFCE21031A5F3A2200632744 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFCE21011A5F3A2200632744 /* Main.storyboard */; };
 		AFCE21051A5F3A2200632744 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AFCE21041A5F3A2200632744 /* Images.xcassets */; };
@@ -80,6 +81,7 @@
 		4A67E27B7791D4705F2575CB /* Pods-MobileSimulator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileSimulator.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MobileSimulator/Pods-MobileSimulator.debug.xcconfig"; sourceTree = "<group>"; };
 		56DCC7B9D61480CFD508C9E5 /* Pods-MobileSimulator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileSimulator.release.xcconfig"; path = "Pods/Target Support Files/Pods-MobileSimulator/Pods-MobileSimulator.release.xcconfig"; sourceTree = "<group>"; };
 		AAA6B29EFC0F387328D059BB /* libPods-MobileSimulator.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MobileSimulator.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF081E7F1A9FBF7900DF2510 /* DPAlertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPAlertViewController.swift; sourceTree = "<group>"; };
 		AFCE20F81A5F3A2200632744 /* MobileSimulator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobileSimulator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFCE20FC1A5F3A2200632744 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AFCE20FD1A5F3A2200632744 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -274,6 +276,7 @@
 				AFE7A7821A9F3B2B0039FEE4 /* CircuitCollectionViewCell.swift */,
 				AFE7A7831A9F3B2B0039FEE4 /* SweetAlert.swift */,
 				AFE7A7841A9F3B2B0039FEE4 /* VersionChecker.swift */,
+				AF081E7F1A9FBF7900DF2510 /* DPAlertViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -584,6 +587,7 @@
 				AFE7A7B41A9F3D610039FEE4 /* DCMPlans.swift in Sources */,
 				AFE7A7B01A9F3D550039FEE4 /* DateUtility.swift in Sources */,
 				AFE7A7861A9F3B2B0039FEE4 /* SweetAlert.swift in Sources */,
+				AF081E801A9FBF7900DF2510 /* DPAlertViewController.swift in Sources */,
 				AFE7A7931A9F3B4D0039FEE4 /* RootTabBarController.swift in Sources */,
 				AFE7A7871A9F3B2B0039FEE4 /* VersionChecker.swift in Sources */,
 				AFE7A7AC1A9F3D410039FEE4 /* SBPlans.swift in Sources */,

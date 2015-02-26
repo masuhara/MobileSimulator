@@ -28,3 +28,23 @@ extension UIColor {
         }
     }
 }
+
+public class UIDatePickerTextField: UITextField {
+    
+    override public func awakeFromNib() {
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("handleFocused:"), name: UITextFieldTextDidBeginEditingNotification, object: nil)
+    }
+    
+    public func handleFocused(notification: NSNotification!) {
+        var datePickerView  : UIDatePicker = UIDatePicker()
+        datePickerView.datePickerMode = UIDatePickerMode.Date
+        self.inputView = datePickerView
+        datePickerView.addTarget(self, action: Selector("handleDatePicker:"), forControlEvents: UIControlEvents.ValueChanged)
+    }
+    
+    public func handleDatePicker(sender: UIDatePicker) {
+        var dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "yyyy/MM/dd"
+        super.text = dateFormatter.stringFromDate(sender.date)
+    }
+}
