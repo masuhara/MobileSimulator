@@ -10,16 +10,20 @@ import UIKit
 
 class SoftbankViewController: UIViewController ,UITableViewDelegate, UITableViewDataSource {
     
+    var sum: Int = 0
     var plans: [String] = []
     var values: [Int] = []
+    var checkMarkArray: [Bool] = []
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var priceLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.dataSource = self
         tableView.delegate = self
+        tableView.multipleTouchEnabled = true;
         
         setPlans()
         setNavigationBarAttribute()
@@ -39,6 +43,13 @@ class SoftbankViewController: UIViewController ,UITableViewDelegate, UITableView
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Value1, reuseIdentifier: "Cell");
         
+        //Check Mark
+        if(checkMarkArray[indexPath.row]) {
+            cell.accessoryType = UITableViewCellAccessoryType.Checkmark
+        }else {
+            cell.accessoryType = UITableViewCellAccessoryType.None
+        }
+        
         //Cell Appearance
         cell.textLabel?.text = plans[indexPath.row]
         cell.textLabel?.font = UIFont(name: "FOT-ComicReggae Std", size: 16)
@@ -51,6 +62,27 @@ class SoftbankViewController: UIViewController ,UITableViewDelegate, UITableView
     func tableView(tableView: UITableView?, didSelectRowAtIndexPath indexPath:NSIndexPath!) {
         var text: String = plans[indexPath.row];
         println(text);
+        
+        var cell = tableView?.cellForRowAtIndexPath(indexPath)
+        
+        if cell?.accessoryType == UITableViewCellAccessoryType.Checkmark {
+            checkMarkArray[indexPath.row] = false
+            cell?.accessoryType = UITableViewCellAccessoryType.None
+            sum = sum - values[indexPath.row]
+            priceLabel.text = String(format: "%d", sum)
+        }else {
+            checkMarkArray[indexPath.row] = true
+            cell?.accessoryType = UITableViewCellAccessoryType.Checkmark
+            sum = sum + values[indexPath.row]
+            priceLabel.text = String(format: "%d", sum)
+        }
+        
+        tableView?.deselectRowAtIndexPath(indexPath, animated: true)
+    }
+    
+    func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
+        //var cell = tableView.cellForRowAtIndexPath(indexPath)
+        //cell?.accessoryType = UITableViewCellAccessoryType.None
     }
     
     //MARK:Private
@@ -62,10 +94,11 @@ class SoftbankViewController: UIViewController ,UITableViewDelegate, UITableView
     }
     
     private func setPlans() {
-        for key in AUPlans.sharedInstance.contents.keys{
+        for key in SBPlans.sharedInstance.contents.keys{
             plans.append(key)
-            for value in AUPlans.sharedInstance.contents.values{
+            for value in SBPlans.sharedInstance.contents.values{
                 values.append(value)
+                checkMarkArray.append(false)
             }
         }
     }
