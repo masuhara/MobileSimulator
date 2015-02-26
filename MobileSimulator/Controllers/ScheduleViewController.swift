@@ -18,12 +18,17 @@ class ScheduleViewController: UIViewController, UICollectionViewDataSource, UICo
         
         collectionView.dataSource = self
         collectionView.delegate = self
-
-        // Do any additional setup after loading the view.
+        
+        // Parse
+        loadData { (pictures, error) -> () in
+            //self.pictures = pictures
+            self.collectionView.reloadData()
+        }
+        
+        // Calc Days
         let dateX = NSDate()
         let dateY = NSDate().dateByAddingTimeInterval(60*60*24*8)
         var num = DateUtility.calcDaysBetween(dateX, endDate: dateY)
-        NSLog("%d", num)
     }
 
     override func didReceiveMemoryWarning() {
@@ -35,7 +40,7 @@ class ScheduleViewController: UIViewController, UICollectionViewDataSource, UICo
         return 1
     }
     
-    // MARK: - UICollectionViewDelegate Protocol
+    // MARK: UICollectionViewDelegate
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         /*
         if section == 0 {
@@ -59,7 +64,29 @@ class ScheduleViewController: UIViewController, UICollectionViewDataSource, UICo
         return cell
     }
     
+    // MARK: Private
+    private func loadData(callback:([PFObject]!, NSError!) -> ())  {
+        var query: PFQuery = PFQuery(className: "UnderContract")
+        query.orderByAscending("createdAt")
+        query.findObjectsInBackgroundWithBlock { (objects: [AnyObject]!, error: NSError!) -> Void in
+            if (error != nil){
+                // エラー処理
+            }
+            callback(objects as [PFObject], error)
+        }
+    }
+    
     @IBAction private func addCircuit() {
+        
+        var date = NSDate()
+        
+        var testObject:PFObject = PFObject(className: "UnderContract")
+        testObject.setObject("au", forKey: "carrier")
+        testObject.setObject(date, forKey: "startDate")
+
+        testObject.saveInBackground()
+        
+        
         numberOfRows++
         collectionView.reloadData()
     }

@@ -8,3 +8,5 @@
 #import <GoogleAnalytics-iOS-SDK/GAIFields.h>
 #import <GoogleAnalytics-iOS-SDK/GAILogger.h>
 #import <GoogleAnalytics-iOS-SDK/GAIDictionaryBuilder.h>
+#import <Parse/Parse.h>
+#import <Bolts/Bolts.h>

@@ -15,7 +15,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UIAlertViewDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
+        // Badge
+        UIApplication.sharedApplication().applicationIconBadgeNumber = 0
+        
+        // GoogleAnalytics
         setGoogleAnalytics()
+        
+        // Parse
+        let id = "g2uV2wiA4nVb1yqVRcIcMryPFNAEPBC3TUWTgLCA"
+        let key = "iYMr1MqMcbExNa24nHxfp48DjcjRJmEF7MnDdQ0d"
+        Parse.setApplicationId(id, clientKey: key)
+        PFUser.enableAutomaticUser()
+        var defaultACL = PFACL()
+        PFACL.setDefaultACL(defaultACL, withAccessForCurrentUser: true)
+        notificationSetting(application)
+        
+        
+        // Version Check
         var viewController = self.window?.rootViewController
         VersionChecker.showNewFeatures(viewController!)
 
@@ -44,11 +60,40 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UIAlertViewDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
     
+    func application(application: UIApplication, didRegisterUserNotificationSettings notificationSettings: UIUserNotificationSettings) {
+        application.registerForRemoteNotifications()
+    }
+    
+    func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
+        let installation = PFInstallation.currentInstallation()
+        installation.setDeviceTokenFromData(deviceToken)
+        // if you do not import Bolts.framework, this code say error
+        installation.saveInBackground()
+    }
+    
+    func application( application: UIApplication!, didFailToRegisterForRemoteNotificationsWithError error: NSError! ) {
+        
+        println( error.localizedDescription )
+    }
+    
     private func setGoogleAnalytics() {
         GAI.sharedInstance().trackUncaughtExceptions = true;
         GAI.sharedInstance().dispatchInterval = 20
         GAI.sharedInstance().logger.logLevel = .Info
         GAI.sharedInstance().trackerWithTrackingId("UA-59993460-3")
+    }
+    
+    private func notificationSetting(application: UIApplication) {
+        var currentVersion = (UIDevice.currentDevice().systemVersion as NSString).floatValue
+        if currentVersion >= 8.0{
+            var types:UIUserNotificationType = UIUserNotificationType.Badge | UIUserNotificationType.Alert | UIUserNotificationType.Sound
+            var settings: UIUserNotificationSettings = UIUserNotificationSettings( forTypes: types, categories: nil )
+            application.registerUserNotificationSettings(settings)
+            application.registerForRemoteNotifications()
+        }else{
+            var types:UIRemoteNotificationType = UIRemoteNotificationType.Badge | UIRemoteNotificationType.Alert | UIRemoteNotificationType.Sound
+            application.registerForRemoteNotificationTypes(types)
+        }
     }
 
 }

@@ -1,7 +1,7 @@
 #include "Pods-MobileSimulator-Realm.xcconfig"
 CLANG_CXX_LANGUAGE_STANDARD = ${PODS_MOBILESIMULATOR_REALM_CLANG_CXX_LANGUAGE_STANDARD}
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers/Private" "${PODS_ROOT}/Headers/Private/Realm" "${PODS_ROOT}/Headers/Private/Realm/Realm" "${PODS_ROOT}/Headers/Private/Realm/tightdb" "${PODS_ROOT}/Headers/Private/Realm/tightdb/impl" "${PODS_ROOT}/Headers/Private/Realm/tightdb/util" "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/AFNetworking" "${PODS_ROOT}/Headers/Public/BlocksKit" "${PODS_ROOT}/Headers/Public/Google-Mobile-Ads-SDK" "${PODS_ROOT}/Headers/Public/GoogleAnalytics-iOS-SDK" "${PODS_ROOT}/Headers/Public/Realm" "${PODS_ROOT}/Headers/Public/Realm/Realm" "${PODS_ROOT}/Headers/Public/SRGVersionUpdater"
+HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers/Private" "${PODS_ROOT}/Headers/Private/Realm" "${PODS_ROOT}/Headers/Private/Realm/Realm" "${PODS_ROOT}/Headers/Private/Realm/tightdb" "${PODS_ROOT}/Headers/Private/Realm/tightdb/impl" "${PODS_ROOT}/Headers/Private/Realm/tightdb/util" "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/AFNetworking" "${PODS_ROOT}/Headers/Public/BlocksKit" "${PODS_ROOT}/Headers/Public/Bolts" "${PODS_ROOT}/Headers/Public/Google-Mobile-Ads-SDK" "${PODS_ROOT}/Headers/Public/GoogleAnalytics-iOS-SDK" "${PODS_ROOT}/Headers/Public/Parse" "${PODS_ROOT}/Headers/Public/Realm" "${PODS_ROOT}/Headers/Public/Realm/Realm" "${PODS_ROOT}/Headers/Public/SRGVersionUpdater"
 LIBRARY_SEARCH_PATHS = ${PODS_MOBILESIMULATOR_REALM_LIBRARY_SEARCH_PATHS}
 OTHER_CPLUSPLUSFLAGS = ${PODS_MOBILESIMULATOR_REALM_OTHER_CPLUSPLUSFLAGS}
 OTHER_LDFLAGS = ${PODS_MOBILESIMULATOR_REALM_OTHER_LDFLAGS} -ObjC
