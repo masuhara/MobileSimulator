@@ -8,12 +8,14 @@
 
 import UIKit
 
-class RootTabBarController: UITabBarController {
-
+class RootTabBarController: UITabBarController, UITabBarControllerDelegate, GADInterstitialDelegate{
+    
     var interstitial:GADInterstitial = GADInterstitial()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.delegate = self
         
         UITabBar.appearance().backgroundImage = UIImage(named: "tabbar_bg_black.png")
         
@@ -26,16 +28,13 @@ class RootTabBarController: UITabBarController {
         
         //MARK:AdMob Interstitial
         interstitial.adUnitID = "ca-app-pub-6363351251362748/7717543510"
+        interstitial.delegate = self
         interstitial.loadRequest(GADRequest())
     }
     
     override func viewDidAppear(animated: Bool) {
-        
-        if interstitial.isReady {
-            interstitial.presentFromRootViewController(self)
-        } else {
-            NSLog("is Not Ready")
-        }
+        GAI.sharedInstance().defaultTracker.set(kGAIScreenName, value: "Main Screen")
+        GAI.sharedInstance().defaultTracker.send(GAIDictionaryBuilder.createScreenView().build())
     }
     
     override func didReceiveMemoryWarning() {
@@ -43,6 +42,16 @@ class RootTabBarController: UITabBarController {
         // Dispose of any resources that can be recreated.
     }
     
+    //TabBarController Delegate
+    func tabBarController(tabBarController: UITabBarController, didSelectViewController viewController: UIViewController) {
+        
+        var selectedIndex = tabBarController.selectedIndex
+        if selectedIndex == 1 {
+            showInterstitialAd()
+        }
+    }
+    
+    //MARK:Private
     private func setTabBarIcons() {
         // tabbar icons
         var au_tabBarItem = self.tabBar.items![0] as UITabBarItem;
@@ -76,6 +85,22 @@ class RootTabBarController: UITabBarController {
         au_tabBarItem.setTitleTextAttributes(selectedAttributes, forState: UIControlState.Selected);
         docomo_tabBarItem.setTitleTextAttributes(selectedAttributes, forState: UIControlState.Selected);
         sb_tabBarItem.setTitleTextAttributes(selectedAttributes, forState: UIControlState.Selected);
+        
     }
-
+    
+    //MARK:Interstitial Ad
+    private func showInterstitialAd() {
+        
+        if interstitial.isReady {
+            interstitial.presentFromRootViewController(self)
+        } else {
+            NSLog("is Not Ready")
+        }
+    }
+    
+    //MARK:Interstitial Ad Delegate
+    func interstitialDidReceiveAd(ad: GADInterstitial!) {
+        NSLog("Get Ready")
+    }
+    
 }

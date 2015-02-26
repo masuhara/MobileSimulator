@@ -111,21 +111,26 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Zxb-pK-bLb">
-                                <rect key="frame" x="61" y="15" width="150" height="20"/>
+                                <rect key="frame" x="96" y="15" width="115" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="ComicReggaeStd-B" family="FOT-ComicReggae Std" pointSize="19"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" title="au" id="HFh-rO-Q7B">
-                        <barButtonItem key="leftBarButtonItem" systemItem="search" id="g2U-bG-t0C"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="jgw-1X-Fn8"/>
+                        <barButtonItem key="leftBarButtonItem" image="home.png" id="g2U-bG-t0C">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="save-button.png" id="jgw-1X-Fn8">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="priceLabel" destination="Zxb-pK-bLb" id="JTj-Py-hBj"/>
                         <outlet property="tableView" destination="Btg-cy-Kvc" id="Xrd-ce-BcV"/>
                     </connections>
                 </viewController>
@@ -222,21 +227,26 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="04a-GU-J5w">
-                                <rect key="frame" x="61" y="15" width="150" height="20"/>
+                                <rect key="frame" x="96" y="15" width="115" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="ComicReggaeStd-B" family="FOT-ComicReggae Std" pointSize="19"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" title="docomo" id="RS7-u8-4ez">
-                        <barButtonItem key="leftBarButtonItem" systemItem="search" id="cDG-jN-zlD"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="OLy-9h-kFI"/>
+                        <barButtonItem key="leftBarButtonItem" image="home.png" id="cDG-jN-zlD">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="save-button.png" id="OLy-9h-kFI">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="priceLabel" destination="04a-GU-J5w" id="pFI-Qe-DL6"/>
                         <outlet property="tableView" destination="CyH-cW-zjd" id="jZs-Cg-UNb"/>
                     </connections>
                 </viewController>
@@ -299,21 +309,26 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="bay-LU-Z7l">
-                                <rect key="frame" x="61" y="15" width="150" height="20"/>
+                                <rect key="frame" x="96" y="15" width="115" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="ComicReggaeStd-B" family="FOT-ComicReggae Std" pointSize="19"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" title="SoftBank" id="eIb-6B-MNP">
-                        <barButtonItem key="leftBarButtonItem" systemItem="search" id="2Ya-2n-LoU"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="cFB-ZT-JVX"/>
+                        <barButtonItem key="leftBarButtonItem" image="home.png" id="2Ya-2n-LoU">
+                            <color key="tintColor" red="0.93338909739999998" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="save-button.png" id="cFB-ZT-JVX">
+                            <color key="tintColor" red="0.93338909739999998" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="priceLabel" destination="bay-LU-Z7l" id="7dG-cC-9R9"/>
                         <outlet property="tableView" destination="dbd-b4-Tyd" id="KEl-EZ-5dx"/>
                     </connections>
                 </viewController>
@@ -325,6 +340,8 @@
     <resources>
         <image name="au_deselected.png" width="30" height="30"/>
         <image name="docomo_deselected.png" width="30" height="30"/>
+        <image name="home.png" width="24" height="24"/>
+        <image name="save-button.png" width="24" height="24"/>
         <image name="softbank_deselected.png" width="30" height="30"/>
         <image name="tabbar_bg_black.png" width="320" height="48"/>
     </resources>

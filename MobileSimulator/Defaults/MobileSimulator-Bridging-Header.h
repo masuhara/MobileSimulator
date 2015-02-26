@@ -4,3 +4,7 @@
 
 #import <Realm/Realm.h>
 #import <GoogleMobileAds/GoogleMobileAds.h>
+#import <GoogleAnalytics-iOS-SDK/GAI.h>
+#import <GoogleAnalytics-iOS-SDK/GAIFields.h>
+#import <GoogleAnalytics-iOS-SDK/GAILogger.h>
+#import <GoogleAnalytics-iOS-SDK/GAIDictionaryBuilder.h>
