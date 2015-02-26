@@ -124,9 +124,15 @@
                     <navigationItem key="navigationItem" title="au" id="HFh-rO-Q7B">
                         <barButtonItem key="leftBarButtonItem" image="home.png" id="g2U-bG-t0C">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="showAboutThisApplication" destination="vXZ-lx-hvc" id="BKQ-Ga-X3I"/>
+                            </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="save-button.png" id="jgw-1X-Fn8">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <segue destination="29o-Cx-G7Q" kind="push" id="b95-Hw-ioI"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -240,9 +246,15 @@
                     <navigationItem key="navigationItem" title="docomo" id="RS7-u8-4ez">
                         <barButtonItem key="leftBarButtonItem" image="home.png" id="cDG-jN-zlD">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="showAboutThisApplication" destination="rfP-Ca-xc4" id="3bC-hw-sYf"/>
+                            </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="save-button.png" id="OLy-9h-kFI">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <segue destination="29o-Cx-G7Q" kind="push" id="seU-GT-tYb"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -253,6 +265,81 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fGH-Ys-3y5" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-126" y="-241"/>
+        </scene>
+        <!--契約中の回線一覧-->
+        <scene sceneID="xYr-JK-nff">
+            <objects>
+                <viewController id="29o-Cx-G7Q" customClass="ScheduleViewController" customModule="MobileSimulator" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zC3-Gc-MNn">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="ZxV-H7-1jO">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="Eg9-eD-Rs9">
+                                    <size key="itemSize" width="106" height="106"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="OK9-z2-CKZ" customClass="CircuitCollectionViewCell" customModule="MobileSimulator" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="106" height="106"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="btL-zS-wkh">
+                                                    <rect key="frame" x="0.0" y="0.0" width="106" height="106"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1Ne-q6-IkB">
+                                                    <rect key="frame" x="32" y="60" width="42" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="tcF-XL-gFX">
+                                                    <rect key="frame" x="32" y="28" width="42" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <outlet property="dateLabel" destination="1Ne-q6-IkB" id="O9H-bW-Cmm"/>
+                                            <outlet property="titleLabel" destination="tcF-XL-gFX" id="KxH-0D-Jzp"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="契約中の回線一覧" id="0GI-Iq-dba">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="1Ba-xw-7EY">
+                            <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <connections>
+                                <action selector="addCircuit" destination="29o-Cx-G7Q" id="lNZ-a0-G7j"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="collectionView" destination="ZxV-H7-1jO" id="g5M-Fg-B6N"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZhM-Rx-eRE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="375" y="-388"/>
         </scene>
         <!--SoftBank-->
         <scene sceneID="Os9-SB-qvp">
@@ -322,9 +409,15 @@
                     <navigationItem key="navigationItem" title="SoftBank" id="eIb-6B-MNP">
                         <barButtonItem key="leftBarButtonItem" image="home.png" id="2Ya-2n-LoU">
                             <color key="tintColor" red="0.93338909739999998" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="showAboutThisApplication" destination="HFD-fK-Cew" id="PBX-4m-wd6"/>
+                            </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="save-button.png" id="cFB-ZT-JVX">
                             <color key="tintColor" red="0.93338909739999998" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <segue destination="29o-Cx-G7Q" kind="push" id="KNh-yr-zVM"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -350,4 +443,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="KNh-yr-zVM"/>
+    </inferredMetricsTieBreakers>
 </document>

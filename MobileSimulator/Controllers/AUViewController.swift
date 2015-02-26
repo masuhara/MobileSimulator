@@ -1,5 +1,5 @@
 //
-//  SoftbankViewController.swift
+//  AUViewController.swift
 //  MobileSimulator
 //
 //  Created by Master on 2015/01/09.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SoftbankViewController: UIViewController ,UITableViewDelegate, UITableViewDataSource {
+class AUViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     var sum: Int = 0
     var plans: [String] = []
@@ -27,6 +27,7 @@ class SoftbankViewController: UIViewController ,UITableViewDelegate, UITableView
         
         setPlans()
         setNavigationBarAttribute()
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -37,9 +38,9 @@ class SoftbankViewController: UIViewController ,UITableViewDelegate, UITableView
     
     //MARK:TableView DataSource
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return SBPlans.sharedInstance.contents.count;
+        return AUPlans.sharedInstance.contents.count
     }
-    
+
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Value1, reuseIdentifier: "Cell");
         
@@ -60,9 +61,7 @@ class SoftbankViewController: UIViewController ,UITableViewDelegate, UITableView
     
     //MARK:TableView Delegate
     func tableView(tableView: UITableView?, didSelectRowAtIndexPath indexPath:NSIndexPath!) {
-        var text: String = plans[indexPath.row];
-        println(text);
-        
+
         var cell = tableView?.cellForRowAtIndexPath(indexPath)
         
         if cell?.accessoryType == UITableViewCellAccessoryType.Checkmark {
@@ -85,22 +84,53 @@ class SoftbankViewController: UIViewController ,UITableViewDelegate, UITableView
         //cell?.accessoryType = UITableViewCellAccessoryType.None
     }
     
+    
     //MARK:Private
     private func setNavigationBarAttribute() {
         //self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "tabbar_bg_black"), forBarMetrics: .Default)
-        navigationController?.navigationBar.barTintColor = UIColor.hexStr("c0c0c0", alpha: 1.0)
+        navigationController?.navigationBar.barTintColor = UIColor.orangeColor()
         let titleDictionary: NSDictionary = [NSForegroundColorAttributeName: UIColor.whiteColor()]
         navigationController?.navigationBar.titleTextAttributes = titleDictionary
     }
     
     private func setPlans() {
-        for key in SBPlans.sharedInstance.contents.keys{
+        for key in AUPlans.sharedInstance.contents.keys{
             plans.append(key)
-            for value in SBPlans.sharedInstance.contents.values{
+            for value in AUPlans.sharedInstance.contents.values{
                 values.append(value)
                 checkMarkArray.append(false)
             }
         }
     }
+    
+    @IBAction private func showAboutThisApplication() {
+        //Get this version
+        let infoDictionary = NSBundle.mainBundle().infoDictionary! as Dictionary
+        let bundleVersionString = infoDictionary["CFBundleVersion"]! as String;
+        let bundleVersion = NSNumberFormatter().numberFromString(bundleVersionString)!.floatValue
+        
+        let titleString = String("モバシミュ! v1.0")
+        let contentString = String(format: "Copyright\n2015 Gifted.Inc All Rights Reserved.", bundleVersion)
+        
+        SweetAlert().showAlert(titleString, subTitle: contentString, style: AlertStyle.CustomImag(imageFile: "icon.png"))
+        
+        /*
+        if objc_getClass("UIAlertController") != nil {
+            // UIAlertControlle
+            var alertController = UIAlertController(title: titleString, message: contentString, preferredStyle: .Alert)
+            
+            let okAction = UIAlertAction(title: "OK", style: .Default) { (action) -> Void in
+            }
+            alertController.addAction(okAction)
+            
+            self.presentViewController(alertController, animated: true, completion: nil)
+            
+        } else {
+            // UIAlertView (For iOS 7)
+            var alertView = UIAlertView(title: titleString, message: contentString, delegate: nil, cancelButtonTitle: nil, otherButtonTitles: "OK")
+            alertView.show()
+        }
+        */
+    }
+    
 }
-

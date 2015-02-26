@@ -61,7 +61,6 @@ class DocomoViewController: UIViewController, UITableViewDelegate, UITableViewDa
     //MARK:TableView Delegate
     func tableView(tableView: UITableView?, didSelectRowAtIndexPath indexPath:NSIndexPath!) {
         var text: String = plans[indexPath.row];
-        println(text);
         
         var cell = tableView?.cellForRowAtIndexPath(indexPath)
         
@@ -102,5 +101,36 @@ class DocomoViewController: UIViewController, UITableViewDelegate, UITableViewDa
             }
         }
     }
+    
+    @IBAction private func showAboutThisApplication() {
+        //Get this version
+        let infoDictionary = NSBundle.mainBundle().infoDictionary! as Dictionary
+        let bundleVersionString = infoDictionary["CFBundleVersion"]! as String;
+        let bundleVersion = NSNumberFormatter().numberFromString(bundleVersionString)!.floatValue
+        
+        let titleString = String("モバシミュ! v1.0")
+        let contentString = String(format: "Copyright\n2015 Gifted.Inc All Rights Reserved.", bundleVersion)
+        
+        SweetAlert().showAlert(titleString, subTitle: contentString, style: AlertStyle.CustomImag(imageFile: "icon.png"))
+        
+        /*
+        if objc_getClass("UIAlertController") != nil {
+        // UIAlertControlle
+        var alertController = UIAlertController(title: titleString, message: contentString, preferredStyle: .Alert)
+        
+        let okAction = UIAlertAction(title: "OK", style: .Default) { (action) -> Void in
+        }
+        alertController.addAction(okAction)
+        
+        self.presentViewController(alertController, animated: true, completion: nil)
+        
+        } else {
+        // UIAlertView (For iOS 7)
+        var alertView = UIAlertView(title: titleString, message: contentString, delegate: nil, cancelButtonTitle: nil, otherButtonTitles: "OK")
+        alertView.show()
+        }
+        */
+    }
+
     
 }
