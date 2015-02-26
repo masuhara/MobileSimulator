@@ -19,7 +19,12 @@ class DateUtility: NSObject {
     
     
     class func calcDaysBetween(startDate: NSDate, endDate: NSDate) -> NSInteger {
-        let cal = NSCalendar(identifier: NSJapaneseCalendar)!
+        //iOS 8
+        //let cal = NSCalendar(identifier: NSJapaneseCalendar)!
+        
+        //iOS 7
+        let cal = NSCalendar(calendarIdentifier: NSJapaneseCalendar)!
+        
         var startDate = adjustZeroClock(startDate, calendar:cal)
         var endDate = adjustZeroClock(endDate, calendar:cal)
         

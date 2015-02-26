@@ -35,10 +35,13 @@ PODS:
   - BlocksKit/UIKit (2.2.5):
     - BlocksKit/Core
     - BlocksKit/DynamicDelegate
+  - Bolts (1.1.3)
   - Google-Mobile-Ads-SDK (7.0.0)
   - GoogleAnalytics-iOS-SDK (3.10):
     - GoogleAnalytics-iOS-SDK/Core (= 3.10)
   - GoogleAnalytics-iOS-SDK/Core (3.10)
+  - Parse (1.6.3):
+    - Bolts (~> 1.1)
   - Realm (0.90.6):
     - Realm/Headers (= 0.90.6)
   - Realm/Headers (0.90.6)
@@ -49,6 +52,7 @@ PODS:
 DEPENDENCIES:
   - Google-Mobile-Ads-SDK (~> 7.0)
   - GoogleAnalytics-iOS-SDK (= 3.10)
+  - Parse (~> 1.6.3)
   - Realm
   - Realm/Headers
   - SRGVersionUpdater (= 0.0.2)
@@ -56,8 +60,10 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   AFNetworking: 6d7b76aa5d04c8c37daad3eef4b7e3f2a7620da3
   BlocksKit: 4439e7f30a9f90743462ca63545a15c1f4304cef
+  Bolts: 3db0a875235e0c9042b013af13af0f00f79b102c
   Google-Mobile-Ads-SDK: 55632bafa382a0987a4cbdefdfea362e24cbe814
   GoogleAnalytics-iOS-SDK: f422062075d9ccb1ea8d783fc5ba3829461e9502
+  Parse: f725f76ef200c5127420690fc6882e57c3813923
   Realm: 6c3facc11964ab9f828f47de6d0e9bf9c4d9c818
   SRGVersionUpdater: 7b6242cd7d094583e74e3642a29ad2ffc05f648f
 
