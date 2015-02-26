@@ -10,7 +10,7 @@ import UIKit
 
 class DateUtility: NSObject {
    
-    class private func adjustZeroClock(date: NSDate, calendar: NSCalendar) -> NSDate {
+    class func adjustZeroClock(date: NSDate, calendar: NSCalendar) -> NSDate {
         var components = calendar.components(NSCalendarUnit.YearCalendarUnit|NSCalendarUnit.MonthCalendarUnit|NSCalendarUnit.DayCalendarUnit|NSCalendarUnit.HourCalendarUnit|NSCalendarUnit.MinuteCalendarUnit|NSCalendarUnit.SecondCalendarUnit,
             fromDate: date)
         

@@ -11,7 +11,8 @@ import UIKit
 class CircuitCollectionViewCell: UICollectionViewCell {
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var dateLabel: UILabel!
-    @IBOutlet var image: UIImageView!
+    @IBOutlet var startDateLabel: UILabel!
+    @IBOutlet var imageView: UIImageView!
     
     override init(frame: CGRect){
         super.init(frame: frame)

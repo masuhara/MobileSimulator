@@ -8,9 +8,10 @@
 
 import UIKit
 
-class ScheduleViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+class ScheduleViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UIGestureRecognizerDelegate {
     
-    var numberOfRows: Int = 0
+    var contractData: NSMutableArray = NSMutableArray()
+    
     @IBOutlet var collectionView: UICollectionView!
     
     override func viewDidLoad() {
@@ -20,15 +21,10 @@ class ScheduleViewController: UIViewController, UICollectionViewDataSource, UICo
         collectionView.delegate = self
         
         // Parse
-        loadData { (pictures, error) -> () in
-            //self.pictures = pictures
+        loadData { (objects, error) -> () in
+            self.contractData = NSMutableArray(array: objects)
             self.collectionView.reloadData()
         }
-        
-        // Calc Days
-        let dateX = NSDate()
-        let dateY = NSDate().dateByAddingTimeInterval(60*60*24*8)
-        var num = DateUtility.calcDaysBetween(dateX, endDate: dateY)
     }
 
     override func didReceiveMemoryWarning() {
@@ -53,14 +49,46 @@ class ScheduleViewController: UIViewController, UICollectionViewDataSource, UICo
             return 0
         }
         */
-        return numberOfRows
+        return contractData.count
     }
 
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("Cell", forIndexPath: indexPath) as CircuitCollectionViewCell
-        cell.titleLabel.text = "hoge"
-        cell.dateLabel.text  = "hoge"
-        cell.backgroundColor = UIColor.blackColor()
+        
+        let underContractArray:PFObject = self.contractData.objectAtIndex(indexPath.row) as PFObject
+        
+        
+        // Calc Days
+        let calendar = NSCalendar(calendarIdentifier: NSJapaneseCalendar)!
+        let contractDate = underContractArray.valueForKey("startDate") as NSDate
+        let currentDate = NSDate()
+        NSLog("cont %@", contractDate)
+        NSLog("cur %@", currentDate)
+        var days = DateUtility.calcDaysBetween(contractDate, endDate: currentDate)
+        
+        // Format
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.locale = NSLocale(localeIdentifier: "ja_JP")
+        dateFormatter.dateFormat = "yyyy/MM/dd"
+        
+        // Cell Contents
+        cell.titleLabel.text = underContractArray.objectForKey("carrier") as? String
+        cell.dateLabel.text = String(days)
+        cell.startDateLabel.text = dateFormatter.stringFromDate(DateUtility.adjustZeroClock(contractDate, calendar: calendar))
+        
+        // Background Color
+        let carrierString: String = cell.titleLabel.text!
+        switch carrierString {
+        case "au":
+            cell.imageView.backgroundColor = UIColor.orangeColor()
+        case "docomo":
+            cell.imageView.backgroundColor = UIColor.hexStr("d2203e", alpha: 1.0)
+        case "softbank":
+            cell.imageView.backgroundColor = UIColor.hexStr("c0c0c0", alpha: 1.0)
+        default:
+            break
+        }
+        
         return cell
     }
     
@@ -87,8 +115,12 @@ class ScheduleViewController: UIViewController, UICollectionViewDataSource, UICo
         testObject.saveInBackground()
         
         
-        numberOfRows++
+        //numberOfRows++
         collectionView.reloadData()
     }
-
+    
+    @IBAction private func longPressed(sender: UILongPressGestureRecognizer) {
+        
+    }
+    
 }
