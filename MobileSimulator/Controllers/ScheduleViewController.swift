@@ -105,7 +105,7 @@ class ScheduleViewController: UIViewController, UICollectionViewDataSource, UICo
     }
     
     @IBAction private func addCircuit() {
-        
+        //回線の追加
         var date = NSDate()
         
         var testObject:PFObject = PFObject(className: "UnderContract")
@@ -113,7 +113,6 @@ class ScheduleViewController: UIViewController, UICollectionViewDataSource, UICo
         testObject.setObject(date, forKey: "startDate")
 
         testObject.saveInBackground()
-        
         
         //numberOfRows++
         collectionView.reloadData()
