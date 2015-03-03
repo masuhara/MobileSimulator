@@ -11,6 +11,8 @@ import UIKit
 
 class AUPlans: NSObject {
     
+    
+    
     class var sharedInstance : AUPlans {
         struct Static {
             static let instance : AUPlans = AUPlans()
@@ -45,5 +47,9 @@ class AUPlans: NSObject {
             "転出事務手数料":2160,
             "誰でも割契約解除料金":10260]
         //参考:http://mobilego22.tanken-go.com/2013/12/13/2427
+        
+        var hoge: String?
+        hoge = "a"
+        NSLog("%@", hoge!)
     }
 }
