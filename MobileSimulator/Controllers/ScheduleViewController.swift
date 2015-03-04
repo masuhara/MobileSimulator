@@ -105,7 +105,7 @@ class ScheduleViewController: UIViewController, UICollectionViewDataSource, UICo
     }
     
     @IBAction private func addCircuit() {
-        //回線の追加
+        //Add Circuit
         var date = NSDate()
         
         var testObject:PFObject = PFObject(className: "UnderContract")
