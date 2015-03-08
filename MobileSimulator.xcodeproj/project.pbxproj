@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		AF081E801A9FBF7900DF2510 /* DPAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF081E7F1A9FBF7900DF2510 /* DPAlertViewController.swift */; };
+		AF8D88E91AAC343E0096C0DF /* DeviceCheckUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF8D88E81AAC343E0096C0DF /* DeviceCheckUtility.swift */; };
 		AFCE20FE1A5F3A2200632744 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCE20FD1A5F3A2200632744 /* AppDelegate.swift */; };
 		AFCE21031A5F3A2200632744 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFCE21011A5F3A2200632744 /* Main.storyboard */; };
 		AFCE21051A5F3A2200632744 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AFCE21041A5F3A2200632744 /* Images.xcassets */; };
@@ -82,6 +83,7 @@
 		56DCC7B9D61480CFD508C9E5 /* Pods-MobileSimulator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileSimulator.release.xcconfig"; path = "Pods/Target Support Files/Pods-MobileSimulator/Pods-MobileSimulator.release.xcconfig"; sourceTree = "<group>"; };
 		AAA6B29EFC0F387328D059BB /* libPods-MobileSimulator.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MobileSimulator.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF081E7F1A9FBF7900DF2510 /* DPAlertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPAlertViewController.swift; sourceTree = "<group>"; };
+		AF8D88E81AAC343E0096C0DF /* DeviceCheckUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DeviceCheckUtility.swift; path = Models/DeviceCheckUtility.swift; sourceTree = "<group>"; };
 		AFCE20F81A5F3A2200632744 /* MobileSimulator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobileSimulator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFCE20FC1A5F3A2200632744 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AFCE20FD1A5F3A2200632744 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -101,7 +103,7 @@
 		AFE7A7821A9F3B2B0039FEE4 /* CircuitCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircuitCollectionViewCell.swift; sourceTree = "<group>"; };
 		AFE7A7831A9F3B2B0039FEE4 /* SweetAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SweetAlert.swift; sourceTree = "<group>"; };
 		AFE7A7841A9F3B2B0039FEE4 /* VersionChecker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VersionChecker.swift; sourceTree = "<group>"; };
-		AFE7A7891A9F3B410039FEE4 /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		AFE7A7891A9F3B410039FEE4 /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Extension.swift; path = Models/Extension.swift; sourceTree = "<group>"; };
 		AFE7A78C1A9F3B4D0039FEE4 /* AUViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AUViewController.swift; sourceTree = "<group>"; };
 		AFE7A78D1A9F3B4D0039FEE4 /* DocomoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocomoViewController.swift; sourceTree = "<group>"; };
 		AFE7A78E1A9F3B4D0039FEE4 /* RootTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootTabBarController.swift; sourceTree = "<group>"; };
@@ -119,7 +121,7 @@
 		AFE7A7A91A9F3C050039FEE4 /* FOT-ComicReggaeStd-B.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FOT-ComicReggaeStd-B.otf"; sourceTree = "<group>"; };
 		AFE7A7AB1A9F3D410039FEE4 /* SBPlans.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SBPlans.swift; sourceTree = "<group>"; };
 		AFE7A7AD1A9F3D500039FEE4 /* AUPlans.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AUPlans.swift; sourceTree = "<group>"; };
-		AFE7A7AF1A9F3D550039FEE4 /* DateUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateUtility.swift; sourceTree = "<group>"; };
+		AFE7A7AF1A9F3D550039FEE4 /* DateUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DateUtility.swift; path = Models/DateUtility.swift; sourceTree = "<group>"; };
 		AFE7A7B31A9F3D610039FEE4 /* DCMPlans.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DCMPlans.swift; sourceTree = "<group>"; };
 		AFE7A7B91A9F4A320039FEE4 /* Contents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Contents.json; sourceTree = "<group>"; };
 		AFE7A7BA1A9F4A320039FEE4 /* Icon-40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-40.png"; sourceTree = "<group>"; };
@@ -175,6 +177,16 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		AF8D88EA1AAC36340096C0DF /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				AFE7A7891A9F3B410039FEE4 /* Extension.swift */,
+				AFE7A7AF1A9F3D550039FEE4 /* DateUtility.swift */,
+				AF8D88E81AAC343E0096C0DF /* DeviceCheckUtility.swift */,
+			);
+			name = Utilities;
+			sourceTree = "<group>";
+		};
 		AFCE20EF1A5F3A2200632744 = {
 			isa = PBXGroup;
 			children = (
@@ -199,6 +211,7 @@
 			isa = PBXGroup;
 			children = (
 				AFCE20FD1A5F3A2200632744 /* AppDelegate.swift */,
+				AF8D88EA1AAC36340096C0DF /* Utilities */,
 				AFE7A7881A9F3B410039FEE4 /* Models */,
 				AFE7A7811A9F3B2B0039FEE4 /* Views */,
 				AFE7A78B1A9F3B4D0039FEE4 /* Controllers */,
@@ -287,8 +300,6 @@
 				AFE7A7AD1A9F3D500039FEE4 /* AUPlans.swift */,
 				AFE7A7B31A9F3D610039FEE4 /* DCMPlans.swift */,
 				AFE7A7AB1A9F3D410039FEE4 /* SBPlans.swift */,
-				AFE7A7891A9F3B410039FEE4 /* Extension.swift */,
-				AFE7A7AF1A9F3D550039FEE4 /* DateUtility.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -589,6 +600,7 @@
 				AFE7A7861A9F3B2B0039FEE4 /* SweetAlert.swift in Sources */,
 				AF081E801A9FBF7900DF2510 /* DPAlertViewController.swift in Sources */,
 				AFE7A7931A9F3B4D0039FEE4 /* RootTabBarController.swift in Sources */,
+				AF8D88E91AAC343E0096C0DF /* DeviceCheckUtility.swift in Sources */,
 				AFE7A7871A9F3B2B0039FEE4 /* VersionChecker.swift in Sources */,
 				AFE7A7AC1A9F3D410039FEE4 /* SBPlans.swift in Sources */,
 				AFE7A7941A9F3B4D0039FEE4 /* ScheduleViewController.swift in Sources */,

@@ -11,7 +11,7 @@ import UIKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UIAlertViewDelegate {
 
-    var window: UIWindow?
+    var window: UIWindow!//unwrapped
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
@@ -34,6 +34,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UIAlertViewDelegate {
         // Version Check
         var viewController = self.window?.rootViewController
         VersionChecker.showNewFeatures(viewController!)
+        
+        // Device Check
+        let hoge = DeviceCheckUtility()
+        hoge.checkDevice(window)//unwrapped
 
         return true
     }
@@ -95,6 +99,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UIAlertViewDelegate {
             application.registerForRemoteNotificationTypes(types)
         }
     }
-
 }
 
