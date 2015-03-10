@@ -52,6 +52,7 @@ class ScheduleViewController: UIViewController, UICollectionViewDataSource, UICo
         return contractData.count
     }
 
+    
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("Cell", forIndexPath: indexPath) as CircuitCollectionViewCell
         
