@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CircuitCollectionViewCell: UICollectionViewCell {
+class CircuitCollectionViewCell: UICollectionViewCell, UIGestureRecognizerDelegate {
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var dateLabel: UILabel!
     @IBOutlet var startDateLabel: UILabel!
@@ -20,5 +20,22 @@ class CircuitCollectionViewCell: UICollectionViewCell {
     
     required init(coder aDecoder: NSCoder){
         super.init(coder: aDecoder)
+        
+        let longPress = UILongPressGestureRecognizer(target: self, action: "hundleLongPress:")
+        longPress.minimumPressDuration = 3.0
+        longPress.delegate = self
+        self.addGestureRecognizer(longPress)
+        
+    }
+    
+    func longPressGesture(sender: UILongPressGestureRecognizer){
+    
+        if(sender.state == UIGestureRecognizerState.Ended){
+            NSLog("%@", sender)
+        }
     }
 }
+
+
+
+
