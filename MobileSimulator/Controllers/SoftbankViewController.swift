@@ -130,7 +130,11 @@ class SoftbankViewController: UIViewController ,UITableViewDelegate, UITableView
         alertView.show()
         }
         */
+        
+    
     }
-
+    
+    
+    
 }
 

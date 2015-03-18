@@ -28,7 +28,13 @@ class AUViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
         setPlans()
         setNavigationBarAttribute()
         
+        
+        var hoge: String!
+        hoge = "ほげ"
+        NSLog("%@", hoge)//エラー
+
     }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
